@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: 12345678
+    driver-class-name: org.postgresql.Driver
+  elasticsearch:
+    uris: http://localhost:9200
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+server:
+  port: 3000
+
+jwt:
+  signer-key: 2020bf9f3130c02d8922f3a532e5a86d4bb0eebc66efc27cdc4b6be81710603f
+  valid-duration: 3600 # in second
+  refreshable-duration: 360000 # in seconds
