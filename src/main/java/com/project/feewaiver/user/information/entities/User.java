@@ -12,6 +12,7 @@ import lombok.experimental.SuperBuilder;
 import org.hibernate.annotations.ColumnDefault;
 
 import java.time.LocalDate;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -52,5 +53,8 @@ public class User extends AbstractEntity {
     @JoinColumn(name = "role_id")
     @NotNull(message = "User role is required.")
     Role role;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    Set<UserDetail> userDetails;
 
 }
